@@ -7,10 +7,7 @@ Anagram.prototype.matches = function(args){
   var argsArray = [];
 
   if (typeof arguments[0] == 'string'){
-    console.log("STRING")
-    for (var i = 0; i < arguments.length; i++){
-      argsArray.push(arguments[i]);
-    }
+    argsArray = Array.prototype.slice.call(arguments);
   } else{
     argsArray = args;
   }
