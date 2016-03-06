@@ -12,10 +12,8 @@ School.prototype.roster = function(){
 School.prototype.add = function(studentName, gradeNum){
   if (!(gradeNum in this.db)){
     this.db[gradeNum] = [];
-    this.db[gradeNum].push(studentName);
-  } else {
-    this.db[gradeNum].push(studentName);
   }
+  this.db[gradeNum].push(studentName);
 }
 
 School.prototype.grade = function(gradeNum){
