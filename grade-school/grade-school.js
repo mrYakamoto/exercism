@@ -3,9 +3,6 @@ var School = function(){
 };
 
 School.prototype.roster = function(){
-  for (grade in this.db){
-    this.db[grade] = this.db[grade].sort();
-  }
   return this.db;
 };
 
@@ -14,15 +11,11 @@ School.prototype.add = function(studentName, gradeNum){
     this.db[gradeNum] = [];
   }
   this.db[gradeNum].push(studentName);
+  this.db[gradeNum] = this.db[gradeNum].sort();
 }
 
 School.prototype.grade = function(gradeNum){
-  if (gradeNum in this.db){
-    var students = this.db[gradeNum].sort();
-    return students;
-  } else {
-    return [];
-  }
+    return this.db[gradeNum] || [];
 }
 
 
